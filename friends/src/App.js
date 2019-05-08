@@ -1,13 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import Friends from './Friends/Friends';
 
-function App() {
-  return (
-    <div className="App">
-    
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      friends: []
+    };
+  }
+
+  componentDidMount(){
+    axios.get('http://localhost:5000/friends')
+    .then(res =>{
+      console.log(res);
+      this.setState({friends:res.data})
+    })
+
+    .catch(err =>{
+      console.log(err);
+
+    })
+  }
+
+  render() {
+    return (
+      <div className="App">
+      <Friends friends = {this.state.friends} />
+      </div>
+    );
+  }
 }
 
 export default App;
