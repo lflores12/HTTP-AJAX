@@ -27,6 +27,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+      <h1>Friends</h1>
       <Friends friends = {this.state.friends} />
       </div>
     );
