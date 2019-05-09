@@ -39,14 +39,14 @@ class FriendForm extends React.Component {
                         value={this.state.friend.name}
                     />
                     <input
-                        type="text"
+                        type="number"
                         name="age"
                         onChange={this.changeHandler}
                         placeholder="age"
                         value={this.state.friend.age}
                     />
                     <input
-                        type="text"
+                        type="string"
                         name="email"
                         onChange={this.changeHandler}
                         placeholder="email"
