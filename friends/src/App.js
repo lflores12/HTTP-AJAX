@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import Friends from './Friends/Friends';
+import Home from './Friends/Home';
+import { BrowserRouter as Router, Route, NavLink, withRouter } from 'react-router-dom';
+
 
 class App extends React.Component {
   constructor() {
@@ -28,7 +31,15 @@ class App extends React.Component {
     return (
       <div className="App">
       <h1>Friends</h1>
-      <Friends friends = {this.state.friends} />
+
+      <Route exact path = '/' component = {Home}/>
+      <Route 
+      exact path = '/friends' 
+      render = {props => (
+         <Friends {...props} 
+         friends = {this.state.friends}
+         />)} />
+
       </div>
     );
   }
