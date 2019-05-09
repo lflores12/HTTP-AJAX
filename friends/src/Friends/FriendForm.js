@@ -15,7 +15,7 @@ class FriendForm extends React.Component {
         const name = event.target.name;
         this.setState(prevState => ({
             friend:{
-                ...prevState.item, 
+                ...prevState.friend, 
                 [name]:value
             }
         }));
