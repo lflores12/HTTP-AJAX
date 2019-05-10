@@ -1,0 +1,10 @@
+/* .friend-list-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+} */
+
+.friend-card {
+    border: 1px solid black;
+}
